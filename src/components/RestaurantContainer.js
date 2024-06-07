@@ -1,10 +1,10 @@
 import RestaurantCard from "./RestaurantCard";
-import resList from "../../config/MOCK_DATA"; 
+import { Link } from "react-router-dom";
 
-const RestaurantContainer = () => {
+const RestaurantContainer = ({ restaurants }) => {
     return <div className="res-container">
         {
-            resList.map(res => <RestaurantCard key={res.info.id} res={res}/>)
+            restaurants.map(res => <Link to={`/restaurant/${res.info.id}`} key={res.info.id}><RestaurantCard res={res}/></Link>)
         }
         
     </div>
