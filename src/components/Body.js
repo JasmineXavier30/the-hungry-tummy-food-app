@@ -4,15 +4,21 @@ import { useEffect, useState } from "react";
 import { SWIGGY_API_URL } from "../../config/constants";
 import BodyTopContainer from "./BodyTopContainer";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "./hooks/useOnlineStatus";
 
 const Body = () => {
     const defaultRestaurants = [];
     const [ restaurants, setRestaurants ] = useState(defaultRestaurants);
     const [ filteredRestaurants, setFilteredRestaurants ] = useState(defaultRestaurants);
 
+
     useEffect(() => {
        fetchRestaurants();
     }, []);
+
+    const onlineStatus = useOnlineStatus();
+
+    if (!onlineStatus) return <h1>Oops! You are offline.</h1>
 
     const fetchRestaurants = async() => {
         try {
@@ -41,7 +47,7 @@ const Body = () => {
 
     const showTopRestaurants = () => {
         const top = restaurants.filter(x => x.info.avgRating >= 4.5);
-        setRestaurants(top);
+        setFilteredRestaurants(top);
     }
 
     const searchRestaurants = (str) => {

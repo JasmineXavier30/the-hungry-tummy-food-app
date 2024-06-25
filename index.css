@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
     --theme-color-divs: #f0f0f0;
         --shimmer-color-img: #d1d0d0;
@@ -117,4 +117,8 @@ a {
     width: 80%;
     padding: 2rem;
     background-color: aliceblue;
-}
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

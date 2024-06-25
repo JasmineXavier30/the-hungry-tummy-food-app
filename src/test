@@ -1,0 +1,17 @@
+const fetchData = url => {
+    let fetchFn = callback => {
+        fetch(url)
+        .then(res => callback(null, res))
+        .catch(e => callback(e))
+    }
+    return fetchFn;
+}
+
+const thunk = fetchData("some url"); // thunk contains returned fn
+
+let cb = (error, data) => {
+    if(error) console.log("error:", error);
+    if(data) console.log("data:", data);
+}
+
+thunk(cb)

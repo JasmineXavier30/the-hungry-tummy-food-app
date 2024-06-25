@@ -2,3 +2,5 @@ node_modules
 .parcel-cache
 dist
 config/MOCK_ALL_RES_DATA_WITH_HEADERS.js
+coverage
+__mocks__
