@@ -10,7 +10,7 @@ const ItemList = ({ info }) => {
     };
 
     return (
-        <div className="text-left p-2 m-2 flex justify-between border-b-2 border-lime-100">
+        <div data-testid="foodItems" className="text-left p-2 m-2 flex justify-between border-b-2 border-lime-100">
             <div className="w-9/12 py-2">
                 <div className="font-bold">{info.name}</div>
                 <div className="">₹ {info.price / 100 || info.defaultPrice / 100}</div>

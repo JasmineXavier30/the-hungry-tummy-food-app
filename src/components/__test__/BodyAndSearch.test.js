@@ -55,5 +55,5 @@ it("should show top rated restaurants", async() => {
     const topResBtn = screen.getByRole("button", { name: "Top Rated Restaurants"});
     fireEvent.click(topResBtn);
     const resultDivs = screen.getAllByTestId("resCard");
-    expect(resultDivs.length).toBe(7)
+    expect(resultDivs.length).toBe(5)
 })

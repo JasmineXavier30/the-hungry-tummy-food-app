@@ -15,7 +15,7 @@ import appStore from "./utils/appStore";
 //import Grocery from "./components/Grocery"; lazy imported. so this is not required
 
 const AppLayout = () => {
-    const [defaultUsername, setDefaultUsername] = useState("Default Username");
+    const [defaultUsername, setDefaultUsername] = useState("User");
     const value = { defaultUsername, setDefaultUsername }; // created object
     /** Outlet just replaces the components Body, Contact Us, About Us, Cart according to the routing. Refer children given below */
     return <>
